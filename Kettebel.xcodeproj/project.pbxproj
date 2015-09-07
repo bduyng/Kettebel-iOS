@@ -118,7 +118,6 @@
 		E1F980981B9DB72100F71233 = {
 			isa = PBXGroup;
 			children = (
-				E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */,
 				E1F980A31B9DB72100F71233 /* Kettebel */,
 				E1F980B91B9DB72100F71233 /* KettebelTests */,
 				E1F980A21B9DB72100F71233 /* Products */,
@@ -152,6 +151,7 @@
 		E1F980A41B9DB72100F71233 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */,
 				E1D732261B9DDEDE0047058A /* SwiftyJSON.swift */,
 				E1F980A51B9DB72100F71233 /* Info.plist */,
 			);

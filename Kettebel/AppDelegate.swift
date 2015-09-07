@@ -16,6 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let content = prefs.stringForKey("currentNoteContent")
+        
+        if content != nil {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let noteVC = storyboard.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
+            noteVC.isNotAdd = true
+            noteVC.isHome = true
+            
+            self.window?.rootViewController = UINavigationController(rootViewController: noteVC)
+            self.window?.makeKeyAndVisible()
+            
+            return true
+            
+            
+        }
+        println(content)
+        
         return true
     }
 

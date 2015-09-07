@@ -11,6 +11,13 @@ import Alamofire
 
 class AccessViewController: UIViewController {
 
+    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var subtitle: UILabel!
+    
+    var mainTitleValue : String?
+    var subtitleValue : String?
+    var syncCodeValue : String?
+    
     @IBOutlet weak var n0: UITextField!
     @IBOutlet weak var n1: UITextField!
     @IBOutlet weak var n2: UITextField!
@@ -19,16 +26,61 @@ class AccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        n0.becomeFirstResponder()
+        if syncCodeValue == nil {
+            n0.becomeFirstResponder()
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if mainTitleValue != nil {
+            mainTitle.text = mainTitleValue
+        }
+        if subtitleValue != nil {
+            subtitle.text = subtitleValue
+        }
+        if syncCodeValue != nil {
+            let charArr = syncCodeValue?.componentsSeparatedByString("")
+            
+            n0.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 0)])
+            n1.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 1)])
+            n2.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 2)])
+            n3.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 3)])
+            n4.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 4)])
+            
+            n0.enabled = false
+            n1.enabled = false
+            n2.enabled = false
+            n3.enabled = false
+            n4.enabled = false
+        }
     }
     
     func sendAccessRequest() {
-        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
-            .response { request, response, data, error in
+        let syncCode = n0.text + n1.text + n2.text + n3.text + n4.text
+        println(syncCode)
+        
+        let headers = [
+            "x-parse-application-id": "",
+            "x-parse-javascript-key": ""
+        ]
+        
+        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/" + syncCode, headers : headers, parameters: nil)
+            .responseJSON { request, response, data, error in
                 println(request)
-                println(response)
-                println(error)
+                if (error != nil) {
+                    println(error)
+                }
+                else {
+                    let json = JSON(data!)
+                    println(json["content"])
+                    let noteController = self.storyboard!.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
+                    noteController.isNotAdd = true
+                    self.navigationController?.pushViewController(noteController, animated: true)
+                    
+                    let prefs = NSUserDefaults.standardUserDefaults()
+                    prefs.setObject(json["uuid"].string, forKey: "currentNoteId")
+                    prefs.setObject(json["content"].string, forKey: "currentNoteContent")
+                }
         }
     }
 
