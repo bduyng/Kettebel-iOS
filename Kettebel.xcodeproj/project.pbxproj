@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1D732231B9DBD900047058A /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D732221B9DBD900047058A /* NoteViewController.swift */; };
+		E1D732271B9DDEDE0047058A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D732261B9DDEDE0047058A /* SwiftyJSON.swift */; };
 		E1F980A71B9DB72100F71233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F980A61B9DB72100F71233 /* AppDelegate.swift */; };
-		E1F980A91B9DB72100F71233 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F980A81B9DB72100F71233 /* ViewController.swift */; };
 		E1F980AC1B9DB72100F71233 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F980AA1B9DB72100F71233 /* Main.storyboard */; };
 		E1F980AE1B9DB72100F71233 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F980AD1B9DB72100F71233 /* Images.xcassets */; };
 		E1F980B11B9DB72100F71233 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1F980AF1B9DB72100F71233 /* LaunchScreen.xib */; };
 		E1F980BD1B9DB72100F71233 /* KettebelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F980BC1B9DB72100F71233 /* KettebelTests.swift */; };
+		E1F980D51B9DB7DE00F71233 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F980CE1B9DB7A800F71233 /* Alamofire.framework */; };
+		E1F980D61B9DB7DE00F71233 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1F980CE1B9DB7A800F71233 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1F980DB1B9DBC2C00F71233 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F980DA1B9DBC2C00F71233 /* HomeViewController.swift */; };
+		E1F980DF1B9DBC4E00F71233 /* AccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F980DE1B9DBC4E00F71233 /* AccessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +28,72 @@
 			remoteGlobalIDString = E1F980A01B9DB72100F71233;
 			remoteInfo = Kettebel;
 		};
+		E1F980CD1B9DB7A800F71233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		E1F980CF1B9DB7A800F71233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		E1F980D11B9DB7A800F71233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		E1F980D31B9DB7A800F71233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire OSX Tests";
+		};
+		E1F980D71B9DB7DE00F71233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E1F980D91B9DB7DE00F71233 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1F980D61B9DB7DE00F71233 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E1D732221B9DBD900047058A /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		E1D732261B9DDEDE0047058A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E1F980A11B9DB72100F71233 /* Kettebel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kettebel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F980A51B9DB72100F71233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F980A61B9DB72100F71233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1F980A81B9DB72100F71233 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1F980AB1B9DB72100F71233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1F980AD1B9DB72100F71233 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1F980B01B9DB72100F71233 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E1F980B61B9DB72100F71233 /* KettebelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KettebelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F980BB1B9DB72100F71233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F980BC1B9DB72100F71233 /* KettebelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KettebelTests.swift; sourceTree = "<group>"; };
+		E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E1F980DA1B9DBC2C00F71233 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1F980DE1B9DBC4E00F71233 /* AccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F980D51B9DB7DE00F71233 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +118,7 @@
 		E1F980981B9DB72100F71233 = {
 			isa = PBXGroup;
 			children = (
+				E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */,
 				E1F980A31B9DB72100F71233 /* Kettebel */,
 				E1F980B91B9DB72100F71233 /* KettebelTests */,
 				E1F980A21B9DB72100F71233 /* Products */,
@@ -78,11 +138,13 @@
 			isa = PBXGroup;
 			children = (
 				E1F980A61B9DB72100F71233 /* AppDelegate.swift */,
-				E1F980A81B9DB72100F71233 /* ViewController.swift */,
 				E1F980AA1B9DB72100F71233 /* Main.storyboard */,
 				E1F980AD1B9DB72100F71233 /* Images.xcassets */,
 				E1F980AF1B9DB72100F71233 /* LaunchScreen.xib */,
 				E1F980A41B9DB72100F71233 /* Supporting Files */,
+				E1F980DA1B9DBC2C00F71233 /* HomeViewController.swift */,
+				E1F980DE1B9DBC4E00F71233 /* AccessViewController.swift */,
+				E1D732221B9DBD900047058A /* NoteViewController.swift */,
 			);
 			path = Kettebel;
 			sourceTree = "<group>";
@@ -90,6 +152,7 @@
 		E1F980A41B9DB72100F71233 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1D732261B9DDEDE0047058A /* SwiftyJSON.swift */,
 				E1F980A51B9DB72100F71233 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -112,6 +175,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E1F980C71B9DB7A800F71233 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1F980CE1B9DB7A800F71233 /* Alamofire.framework */,
+				E1F980D01B9DB7A800F71233 /* Alamofire.framework */,
+				E1F980D21B9DB7A800F71233 /* Alamofire iOS Tests.xctest */,
+				E1F980D41B9DB7A800F71233 /* Alamofire OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +196,12 @@
 				E1F9809D1B9DB72100F71233 /* Sources */,
 				E1F9809E1B9DB72100F71233 /* Frameworks */,
 				E1F9809F1B9DB72100F71233 /* Resources */,
+				E1F980D91B9DB7DE00F71233 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E1F980D81B9DB7DE00F71233 /* PBXTargetDependency */,
 			);
 			name = Kettebel;
 			productName = Kettebel;
@@ -179,6 +255,12 @@
 			mainGroup = E1F980981B9DB72100F71233;
 			productRefGroup = E1F980A21B9DB72100F71233 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E1F980C71B9DB7A800F71233 /* Products */;
+					ProjectRef = E1F980C61B9DB7A800F71233 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E1F980A01B9DB72100F71233 /* Kettebel */,
@@ -186,6 +268,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E1F980CE1B9DB7A800F71233 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = E1F980CD1B9DB7A800F71233 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1F980D01B9DB7A800F71233 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = E1F980CF1B9DB7A800F71233 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1F980D21B9DB7A800F71233 /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = E1F980D11B9DB7A800F71233 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E1F980D41B9DB7A800F71233 /* Alamofire OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire OSX Tests.xctest";
+			remoteRef = E1F980D31B9DB7A800F71233 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E1F9809F1B9DB72100F71233 /* Resources */ = {
@@ -212,8 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1F980A91B9DB72100F71233 /* ViewController.swift in Sources */,
+				E1D732231B9DBD900047058A /* NoteViewController.swift in Sources */,
+				E1F980DF1B9DBC4E00F71233 /* AccessViewController.swift in Sources */,
 				E1F980A71B9DB72100F71233 /* AppDelegate.swift in Sources */,
+				E1D732271B9DDEDE0047058A /* SwiftyJSON.swift in Sources */,
+				E1F980DB1B9DBC2C00F71233 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +348,11 @@
 			isa = PBXTargetDependency;
 			target = E1F980A01B9DB72100F71233 /* Kettebel */;
 			targetProxy = E1F980B71B9DB72100F71233 /* PBXContainerItemProxy */;
+		};
+		E1F980D81B9DB7DE00F71233 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = E1F980D71B9DB7DE00F71233 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -411,6 +532,7 @@
 				E1F980C21B9DB72100F71233 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1F980C31B9DB72100F71233 /* Build configuration list for PBXNativeTarget "KettebelTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +541,7 @@
 				E1F980C51B9DB72100F71233 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
