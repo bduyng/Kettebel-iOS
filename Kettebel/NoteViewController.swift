@@ -11,12 +11,13 @@ import Alamofire
 
 class NoteViewController: UIViewController {
 
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak private var textView: UITextView!
     
     var updateTimer : NSTimer?
     
     var isNotAdd : Bool?
     var isHome : Bool?
+    var isUpdating : Bool? = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,25 +78,29 @@ class NoteViewController: UIViewController {
     func updateNote() {
         let prefs = NSUserDefaults.standardUserDefaults()
         let uuid = prefs.stringForKey("currentNoteId")
+        let lastContent = prefs.stringForKey("currentNoteContent")
         
-        let apiURLString = "http://kattebel.parseapp.com/note/" + uuid! + "/update"
-        let parameters: [String: AnyObject] = [
-            "uuid" : uuid!,
-            "content" : textView.text
-        ]
-        
-        Alamofire.request(.PUT, apiURLString, headers : Config.Headers.Keys, parameters: parameters, encoding: .JSON)
-            .responseJSON { request, response, data, error in
-                if (error != nil) {
-                    println(error)
-                }
-                else {
-                    let json = JSON(data!)
-                    println(json)
-                    let prefs = NSUserDefaults.standardUserDefaults()
-                    prefs.setObject(json["uuid"].string, forKey: "currentNoteId")
-                    prefs.setObject(json["content"].string, forKey: "currentNoteContent")
-                }
+        // do not send request if the content is remained
+        if (textView.text != lastContent) {
+            let apiURLString = "http://kattebel.parseapp.com/note/" + uuid! + "/update"
+            let parameters: [String: AnyObject] = [
+                "uuid" : uuid!,
+                "content" : textView.text
+            ]
+            
+            Alamofire.request(.PUT, apiURLString, headers : Config.Headers.Keys, parameters: parameters, encoding: .JSON)
+                .responseJSON { request, response, data, error in
+                    if (error != nil) {
+                        println(error)
+                    }
+                    else {
+                        let json = JSON(data!)
+                        println(json)
+                        let prefs = NSUserDefaults.standardUserDefaults()
+                        prefs.setObject(json["uuid"].string, forKey: "currentNoteId")
+                        prefs.setObject(json["content"].string, forKey: "currentNoteContent")
+                    }
+            }
         }
     }
     
@@ -134,6 +139,11 @@ private typealias TextViewDelegate = NoteViewController
 extension TextViewDelegate : UITextViewDelegate {
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        if (self.isUpdating == true) {
+            return true
+        }
+        
         if updateTimer == nil {
             updateTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "updateNote", userInfo: nil, repeats: true)
         }
@@ -141,10 +151,13 @@ extension TextViewDelegate : UITextViewDelegate {
             updateTimer?.fire()
         }
         
+        self.isUpdating = true
+        
         return true
     }
     
     func textViewDidEndEditing(textView: UITextView) {
         updateTimer?.invalidate()
+        self.isUpdating = false
     }
 }

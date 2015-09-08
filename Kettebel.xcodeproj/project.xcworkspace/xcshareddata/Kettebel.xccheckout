@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../..Alamofire/</string>
+		<string>../..Alamofire</string>
 		<key>CDBA81245F909F690D40C090DE0C9D7B562FACD8</key>
 		<string>../..</string>
 	</dict>
@@ -36,17 +36,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<string>CDBA81245F909F690D40C090DE0C9D7B562FACD8</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Alamofire</string>
+			<string>Kettebel</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CDBA81245F909F690D40C090DE0C9D7B562FACD8</string>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Kettebel</string>
+			<string>KettebelAlamofire</string>
 		</dict>
 	</array>
 </dict>

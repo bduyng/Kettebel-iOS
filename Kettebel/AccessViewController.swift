@@ -11,8 +11,8 @@ import Alamofire
 
 class AccessViewController: UIViewController {
 
-    @IBOutlet weak var mainTitle: UILabel!
-    @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet weak private var mainTitle: UILabel!
+    @IBOutlet weak private var subtitle: UILabel!
     
     var mainTitleValue : String?
     var subtitleValue : String?
@@ -26,21 +26,22 @@ class AccessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if syncCodeValue == nil {
-            n0.becomeFirstResponder()
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
+        if syncCodeValue == nil {
+            n0.becomeFirstResponder()
+        }
+        
         if mainTitleValue != nil {
             mainTitle.text = mainTitleValue
         }
+        
         if subtitleValue != nil {
             subtitle.text = subtitleValue
         }
+        
         if syncCodeValue != nil {
-            let charArr = syncCodeValue?.componentsSeparatedByString("")
-            
             n0.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 0)])
             n1.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 1)])
             n2.text = String(syncCodeValue![advance(syncCodeValue!.startIndex, 2)])
