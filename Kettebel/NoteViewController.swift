@@ -135,7 +135,8 @@ class NoteViewController: UIViewController {
     }
 }
 
-extension NoteViewController : UITextViewDelegate {
+private typealias TextViewDelegate = NoteViewController
+extension TextViewDelegate : UITextViewDelegate {
     func textViewDidBeginEditing(textView: UITextView) {
         if updateTimer == nil {
             updateTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "updateNote", userInfo: nil, repeats: true)
