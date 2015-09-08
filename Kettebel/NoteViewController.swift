@@ -18,11 +18,6 @@ class NoteViewController: UIViewController {
     var isNotAdd : Bool?
     var isHome : Bool?
     
-    let headers = [
-        "x-parse-application-id": "",
-        "x-parse-javascript-key": ""
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +56,7 @@ class NoteViewController: UIViewController {
     // MARK: Requests
     
     func createNote() {
-        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/new", headers : headers)
+        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/new", headers : Config.Headers.Keys)
             .responseJSON { request, response, data, error in
                 println(request)
                 println(response)
@@ -89,7 +84,7 @@ class NoteViewController: UIViewController {
             "content" : textView.text
         ]
         
-        Alamofire.request(.PUT, apiURLString, headers : headers, parameters: parameters, encoding: .JSON)
+        Alamofire.request(.PUT, apiURLString, headers : Config.Headers.Keys, parameters: parameters, encoding: .JSON)
             .responseJSON { request, response, data, error in
                 if (error != nil) {
                     println(error)
@@ -110,7 +105,7 @@ class NoteViewController: UIViewController {
         let prefs = NSUserDefaults.standardUserDefaults()
         let uuid = prefs.stringForKey("currentNoteId")
         
-        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/" + uuid! + "/sync", headers : headers, parameters: nil)
+        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/" + uuid! + "/sync", headers : Config.Headers.Keys, parameters: nil)
             .responseJSON { request, response, data, error in
                 if (error != nil) {
                     println(error)
@@ -137,13 +132,16 @@ class NoteViewController: UIViewController {
 
 private typealias TextViewDelegate = NoteViewController
 extension TextViewDelegate : UITextViewDelegate {
-    func textViewDidBeginEditing(textView: UITextView) {
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if updateTimer == nil {
             updateTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "updateNote", userInfo: nil, repeats: true)
         }
         else {
             updateTimer?.fire()
         }
+        
+        return true
     }
     
     func textViewDidEndEditing(textView: UITextView) {

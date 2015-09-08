@@ -32,6 +32,5 @@ struct ColorPalette {
     struct Green {
         static let Light = UIColor(rgba: 0x56BFB5)
         static let Dark = UIColor(rgba: 0x38817A)
-        static let Test = UIColor(rgba: 0x5538817A)
     }
 }

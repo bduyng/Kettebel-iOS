@@ -59,12 +59,7 @@ class AccessViewController: UIViewController {
         let syncCode = n0.text + n1.text + n2.text + n3.text + n4.text
         println(syncCode)
         
-        let headers = [
-            "x-parse-application-id": "",
-            "x-parse-javascript-key": ""
-        ]
-        
-        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/" + syncCode, headers : headers, parameters: nil)
+        Alamofire.request(.GET, "http://kattebel.parseapp.com/note/" + syncCode, headers : Config.Headers.Keys, parameters: nil)
             .responseJSON { request, response, data, error in
                 println(request)
                 if (error != nil) {

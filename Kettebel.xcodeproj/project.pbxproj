@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E1D50DF21B9E9B01006C8A81 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D50DF11B9E9B01006C8A81 /* ColorPalette.swift */; };
+		E1D50DF71B9EA68F006C8A81 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D50DF61B9EA68F006C8A81 /* Config.swift */; };
 		E1D732231B9DBD900047058A /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D732221B9DBD900047058A /* NoteViewController.swift */; };
 		E1D732271B9DDEDE0047058A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D732261B9DDEDE0047058A /* SwiftyJSON.swift */; };
 		E1F980A71B9DB72100F71233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F980A61B9DB72100F71233 /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		E1D50DF11B9E9B01006C8A81 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		E1D50DF61B9EA68F006C8A81 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		E1D732221B9DBD900047058A /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		E1D732261B9DDEDE0047058A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E1F980A11B9DB72100F71233 /* Kettebel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kettebel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				E1F980DE1B9DBC4E00F71233 /* AccessViewController.swift */,
 				E1D732221B9DBD900047058A /* NoteViewController.swift */,
 				E1D50DF11B9E9B01006C8A81 /* ColorPalette.swift */,
+				E1D50DF61B9EA68F006C8A81 /* Config.swift */,
 			);
 			path = Kettebel;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				E1D732231B9DBD900047058A /* NoteViewController.swift in Sources */,
 				E1F980DF1B9DBC4E00F71233 /* AccessViewController.swift in Sources */,
 				E1F980A71B9DB72100F71233 /* AppDelegate.swift in Sources */,
+				E1D50DF71B9EA68F006C8A81 /* Config.swift in Sources */,
 				E1D732271B9DDEDE0047058A /* SwiftyJSON.swift in Sources */,
 				E1F980DB1B9DBC2C00F71233 /* HomeViewController.swift in Sources */,
 				E1D50DF21B9E9B01006C8A81 /* ColorPalette.swift in Sources */,
